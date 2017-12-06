@@ -6,8 +6,10 @@ pipeline{
         sh 'mvn clean package'
       }
       post{
-        echo "Now archiving..."
-        archiveArtificats artificats: '**/target/*.war'
+        success{
+          echo "Now archiving..."
+          archiveArtificats artificats: '**/target/*.war'
+        }
       }
     }
     stage('Deploy to Staging'){
