@@ -12,12 +12,7 @@ pipeline{
         }
       }
     }
-    stage('Deploy to Staging'){
-      steps{
-        build job: deploy-to-stage
-      }
-    
-    }
+
     stage('Deploy to Product'){
       steps{
         timeout(time:5, unit:'DAYS'){
